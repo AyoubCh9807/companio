@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@font-face {
+  font-family: 'Geist Sans';
+  src: url('/fonts/geist_sans.woff2') format('woff2');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.font-sans {
+	font-family: 'Geist Sans';
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
+}
+
+body {
+  background-color: #1a1919
+}
