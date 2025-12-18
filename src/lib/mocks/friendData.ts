@@ -1,4 +1,6 @@
-export const avatars = [
+import type { Friend } from "$lib/types/friend";
+
+export const avatars: Friend["avatar"][] = [
 	'https://cdn.discordapp.com/avatars/1447000678248480818/b78698df3849a93a47677f709786b215.webp?size=32',
 	'https://cdn.discordapp.com/guilds/1091441097915506841/users/645343657075146772/avatars/c26a9a603a265363aa335dcf889b13e2.webp?size=128',
 	'https://cdn.discordapp.com/avatars/1383973526205235240/f1d046bed39ec870334c6b33900b1959.webp?size=32',
@@ -23,7 +25,7 @@ export const avatars = [
 	'https://cdn.discordapp.com/avatars/735147814878969968/8b72f174c30276f4d48c1e66608df70c.webp?size=32'
 ];
 
-export const moreAvatars = [
+export const moreAvatars: Friend["avatar"][] = [
     ...avatars,
     ...avatars,
     ...avatars,
@@ -31,3 +33,52 @@ export const moreAvatars = [
     ...avatars,
     ...avatars,
 ]
+
+export const uuids: Friend["id"][] = [
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a001',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a002',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a003',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a004',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a005',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a006',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a007',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a008',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a009',
+	'7f1c1a6e-1c5e-4d21-8c3a-01f1a8b7a010'
+];
+
+export const usernames: Friend["username"][] = [
+	'Itercio',
+	'VoidRunner',
+	'PixelGhost',
+	'NightByte',
+	'Zenitsu',
+	'Frosty',
+	'NullUser',
+	'ByteLord',
+	'ShadowDev',
+	'GhostPing'
+];
+
+export const statuses: Friend["status"][] = [
+	'online',
+	'online',
+	'offline',
+	'online',
+	'offline',
+	'online',
+	'offline',
+	'online',
+	'offline',
+	'online'
+];
+
+export const mockFriends: Friend[] = Array.from(
+	{ length: Math.min(avatars.length, usernames.length) },
+	(_, i) => ({
+		id: uuids[i] ?? crypto.randomUUID(),
+		username: usernames[i],
+		status: statuses[i % statuses.length],
+		avatar: avatars[i % avatars.length]
+	})
+);

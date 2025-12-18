@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { moreAvatars } from '$lib/mocks/avatars';
+	import { moreAvatars } from '$lib/mocks/friendData';
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	let limit = 6;

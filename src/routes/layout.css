@@ -4,9 +4,7 @@
 
 @font-face {
   font-family: 'Geist Sans';
-  src: url('/fonts/geist_sans.woff2') format('woff2');
-  font-weight: bolder;
-  font-style: normal;
+  src: url('/fonts/geist_sans_font.woff2') format('woff2');
 }
 
 .font-sans {
